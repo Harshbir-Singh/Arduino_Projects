@@ -1,2 +1,12 @@
 # Arduino_Projects
-Projects related to Arduino
+Mini-Projects using Arduino:
+
+
+-LCD calculator
+-Photo resistor and Buzzer
+-Pushbuttons to toggle an LED
+-SIPO shift register using LED's
+-Controlling ServoMotors using Joystick
+-Controlling StepperMotors using a Motor Driver
+-Combination of DHT11 and LCD to measure room humidity and temperature
+-HCSR04 Sensor to measure speed of sound
