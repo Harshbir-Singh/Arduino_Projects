@@ -28,6 +28,20 @@ void setup()
 }
 
 void loop() {
+  digitalWrite(trigPin,LOW);
+  delayMicroseconds(10);
+  digitalWrite(trigPin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin,LOW);
+  pingTravelTime = pulseIn(echoPin,HIGH);
+
+
+  distance = (pingTravelTime*765.*5280*12)/(3600.*1000000);
+  finalD = distance/2;
+  Serial.print("Distance(in inches): ");
+  Serial.println(finalD);
+  
+
   if (bluetoothSerial.available() > 0) {
     command = bluetoothSerial.read();
 
@@ -35,7 +49,13 @@ void loop() {
     
     switch (command) {
       case 'F':
-        forward();
+        if(finalD<10 && finalD>0){
+          Stop();
+        }
+        else{
+          forward();
+        }
+        
         break;
       case 'B':
         back();
@@ -49,22 +69,8 @@ void loop() {
     }
     
   }
-  digitalWrite(trigPin,LOW);
-  delayMicroseconds(10);
-  digitalWrite(trigPin,HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin,LOW);
-  pingTravelTime = pulseIn(echoPin,HIGH);
-
-  delay(25);
-  distance = (pingTravelTime*765.*5280*12)/(3600.*1000000);
-  finalD = distance/2;
-  Serial.print("Distance(in inches): ");
-  Serial.println(finalD);
   
-
-
-  if(finalD<9 and finalD >0){
+  if(finalD<10 and finalD >0){
     analogWrite(buzzPin,255);
   } 
   else{
