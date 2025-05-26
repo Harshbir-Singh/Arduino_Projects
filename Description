@@ -2,7 +2,6 @@
 Sofware Used: Arduino IDE
 Mini-Projects using Arduino:
 
-
 -LCD calculator
 -Photo resistor and Buzzer
 -Pushbuttons to toggle an LED
@@ -11,3 +10,13 @@ Mini-Projects using Arduino:
 -Controlling StepperMotors using a Motor Driver
 -Combination of DHT11 and LCD to measure room humidity and temperature
 -HCSR04 Sensor to measure speed of sound
+
+
+Major Project || Bluetooth-Controlled RC Car with Obstacle Detection ||:
+
+-Developed an Arduino-based RC car operated via Bluetooth for remote control functionality
+-Integrated HC-SR04 ultrasonic sensor to detect nearby obstacles and automatically stop the car
+-Implemented a buzzer alert system to notify the user when an object is within a set proximity
+-Utilized an SPST switch to manage the power supply to the entire system
+-Employed four 6V gear motors for movement, controlled using an L293D motor shield
+-Assembled and programmed the system using an Arduino Uno and Bluetooth module for communication
